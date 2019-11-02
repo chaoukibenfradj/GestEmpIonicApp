@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ionic app made with VanillaJS - Ionic WebComponents">
+    <meta name="keywords" content="IONIC,HTML5,VanillaJS,JavaScript,CSS">
+    <meta name="author" content="Ben Fredj Chaouki">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gestion Employées</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@4.6.2/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@4.6.2/dist/ionic/ionic.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@ionic/core@4.6.2/css/ionic.bundle.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body onload="docInit()">
+
+    <ion-app>
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-title>Gest. Employées</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-item>
+                <ion-label position="floating"><ion-icon name="person"></ion-icon> Nom</ion-label>
+                <ion-input type="text" placeholder="Nom" id="name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating"><ion-icon name="calendar"></ion-icon> Age</ion-label>
+                <ion-input type="number" placeholder="Age" id="age"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating"><ion-icon name="card"></ion-icon> Salaire</ion-label>
+                <ion-input type="number" placeholder="Salaire" id="salary"></ion-input>
+            </ion-item>
+
+            <div class="btn-group">
+                <ion-button color="primary" onclick="addItem()">Ajouter</ion-button>
+                <ion-button color="danger" onclick="resetForm()">Réinitialiser</ion-button>
+            </div>
+
+            <div class="title-group">
+                <ion-badge>Nombre emp : <span id="totalEmp"></span></ion-badge>
+                <ion-badge>Salaire total : <span id="totalSalary"></span></ion-badge>
+            </div>
+
+            <ion-list id="listEmp">
+
+            </ion-list>
+
+        </ion-content>
+    </ion-app>
+</body>
+
+</html>
